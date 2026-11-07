@@ -1,26 +1,119 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+ * Lando Ripsday theme, sampled from the logo.
+ *  teal  #0F3A40 is the logo's own background, so the logo blends seamlessly.
+ *  blaze #F4741B is the logo's orange. Text ON orange is always ink (contrast 5.9:1).
+ */
+@theme {
+  --color-ink: #08201f;
+  --color-ink-2: #0b2a2e;
+  --color-teal: #0f3a40;
+  --color-teal-2: #144a51;
+  --color-teal-3: #1d5c64;
+  --color-blaze: #f4741b;
+  --color-blaze-hi: #ff8a33;
+  --color-blaze-lo: #d95f0c;
+  --color-chrome: #eef2f2;
+  --color-silver: #a9b8ba;
+  --color-mist: #c9d4d5;
+  --color-paper: #f3f0e8;
+  --color-paper-2: #e7e2d6;
+  --color-sold: #e5484d;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-barlow), "Arial Narrow", ui-sans-serif, sans-serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --shadow-lift: 0 1px 0 rgb(255 255 255 / 0.06) inset, 0 18px 40px -18px rgb(0 0 0 / 0.6);
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
   }
 }
 
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-teal);
+  color: var(--color-chrome);
+}
+
+/* Headline style echoing the logo lettering. */
+.display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 0.92;
+}
+
+/* Chrome gradient text for big headlines. */
+.text-chrome-grad {
+  background: linear-gradient(180deg, #ffffff 0%, #e6eced 45%, #9fb0b3 55%, #f2f5f5 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Halftone dot texture overlay. */
+.halftone {
+  background-image: radial-gradient(rgb(255 255 255 / 0.07) 1px, transparent 1.2px);
+  background-size: 9px 9px;
+}
+.halftone-orange {
+  background-image: radial-gradient(rgb(244 116 27 / 0.35) 1.1px, transparent 1.4px);
+  background-size: 8px 8px;
+}
+
+/* Torn-paper edge between sections. Apply to a section; set --tear-color to the NEXT section's bg. */
+.tear-bottom {
+  position: relative;
+}
+.tear-bottom::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 18px;
+  background: var(--tear-color, var(--color-ink));
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 18' preserveAspectRatio='none'%3E%3Cpath d='M0 18V8L0 7L10 8L28 2L37 10L46 7L63 2L85 10L96 2L105 8L119 3L130 3L146 8L154 11L163 5L181 12L198 2L215 11L229 2L240 2L256 4L268 8L278 10L287 11L299 10L320 12L330 3L347 11L365 5L378 3L394 3L411 2L428 5L443 12L459 8L479 7L494 11L516 9L529 6L540 4L559 5L568 11L580 10L595 7L614 9L626 11L635 3L651 8L661 7L671 9L685 2L703 3L723 10L740 7L753 7L770 9L787 9L796 3L808 9L827 12L836 2L855 6L873 11L891 9L903 8L925 12L938 2L953 7L963 11L972 9L980 5L1000 6L1010 5L1024 8L1046 9L1055 4L1070 8L1086 6L1108 4L1129 8L1150 10L1162 8L1175 12L1197 8L1200 8V18z'/%3E%3C/svg%3E") bottom / 100% 18px no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 18' preserveAspectRatio='none'%3E%3Cpath d='M0 18V8L0 7L10 8L28 2L37 10L46 7L63 2L85 10L96 2L105 8L119 3L130 3L146 8L154 11L163 5L181 12L198 2L215 11L229 2L240 2L256 4L268 8L278 10L287 11L299 10L320 12L330 3L347 11L365 5L378 3L394 3L411 2L428 5L443 12L459 8L479 7L494 11L516 9L529 6L540 4L559 5L568 11L580 10L595 7L614 9L626 11L635 3L651 8L661 7L671 9L685 2L703 3L723 10L740 7L753 7L770 9L787 9L796 3L808 9L827 12L836 2L855 6L873 11L891 9L903 8L925 12L938 2L953 7L963 11L972 9L980 5L1000 6L1010 5L1024 8L1046 9L1055 4L1070 8L1086 6L1108 4L1129 8L1150 10L1162 8L1175 12L1197 8L1200 8V18z'/%3E%3C/svg%3E") bottom / 100% 18px no-repeat;
+  pointer-events: none;
+}
+
+/* Stadium-light glow behind the hero. */
+.stadium-glow {
+  background:
+    radial-gradient(60% 50% at 15% 0%, rgb(255 255 255 / 0.10), transparent 70%),
+    radial-gradient(60% 50% at 85% 0%, rgb(255 255 255 / 0.10), transparent 70%),
+    radial-gradient(50% 60% at 50% 60%, rgb(244 116 27 / 0.16), transparent 70%);
+}
+
+/* Focus ring that's visible on every surface. */
+:focus-visible {
+  outline: 3px solid var(--color-blaze);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

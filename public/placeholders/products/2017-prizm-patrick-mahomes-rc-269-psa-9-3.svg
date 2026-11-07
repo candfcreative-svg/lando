@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="1200" height="1200" role="img" aria-label="Placeholder image">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="75%">
+      <stop offset="0" stop-color="#f5f2ea"/>
+      <stop offset="1" stop-color="#e6e0d2"/>
+    </radialGradient>
+    <pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#0b2a2e" fill-opacity=".05"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg)"/>
+  <rect width="600" height="600" fill="url(#dots)"/>
+  
+  <g transform="translate(-300 -330) scale(2)">
+  <g stroke="#0b2a2e" stroke-width="6" stroke-linejoin="round">
+    <rect x="160" y="70" width="280" height="460" rx="18" fill="#ffffff" fill-opacity="0.6"/>
+    <rect x="178" y="88" width="244" height="70" rx="6" fill="#ffffff"/>
+    <rect x="198" y="182" width="204" height="326" rx="10" fill="#1d5c64"/>
+    <rect x="212" y="196" width="176" height="230" rx="6" fill="#6b4fbf"/>
+    <circle cx="300" cy="290" r="48" fill="#1d5c64" stroke-width="5"/>
+    <path d="M250 426c10-40 30-60 50-60s40 20 50 60" fill="#1d5c64" stroke-width="5"/>
+    <rect x="212" y="440" width="176" height="52" rx="4" fill="#f7f7f2" stroke-width="4"/>
+  </g>
+  <text x="300" y="132" text-anchor="middle" font-family="Arial Narrow, Arial, sans-serif" font-weight="700" font-size="26" fill="#0b2a2e">2017 · PSA 9</text>
+  <path d="M190 92l18 0" stroke="#ffffff" stroke-width="10" stroke-linecap="round" opacity=".7"/></g>
+  <g font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#0b2a2e" fill-opacity=".45" letter-spacing="2">
+    <text x="24" y="576">PLACEHOLDER · DETAIL</text>
+    <text x="576" y="576" text-anchor="end">LANDO RIPSDAY</text>
+  </g>
+</svg>

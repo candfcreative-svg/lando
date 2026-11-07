@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="1200" height="1200" role="img" aria-label="Placeholder image">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="75%">
+      <stop offset="0" stop-color="#f6efe7"/>
+      <stop offset="1" stop-color="#eadbca"/>
+    </radialGradient>
+    <pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#0b2a2e" fill-opacity=".05"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg)"/>
+  <rect width="600" height="600" fill="url(#dots)"/>
+  <ellipse cx="300" cy="540" rx="230" ry="18" fill="#0b2a2e" fill-opacity=".12"/>
+  <g transform="translate(0 0)">
+  <g stroke="#0b2a2e" stroke-width="6" stroke-linejoin="round">
+    <path d="M140 200l170-60 160 50v250l-170 70-160-60z" fill="#1d5c64"/>
+    <path d="M140 200l160 60 170-70" fill="none"/>
+    <path d="M300 260v250" fill="none"/>
+    <path d="M140 200l160 60v250l-160-60z" fill="#2e8b57"/>
+    <rect x="170" y="290" width="100" height="120" rx="8" transform="skewY(20)" fill="#ffffff" fill-opacity=".85" stroke-width="5"/>
+    <path d="M330 300l110-44M330 340l110-44" stroke="#ffffff" stroke-width="8" opacity=".85"/>
+  </g></g>
+  <g font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#0b2a2e" fill-opacity=".45" letter-spacing="2">
+    <text x="24" y="576">PLACEHOLDER · FRONT</text>
+    <text x="576" y="576" text-anchor="end">LANDO RIPSDAY</text>
+  </g>
+</svg>
